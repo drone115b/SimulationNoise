@@ -96,7 +96,7 @@ void hash4d( float V[3], signed long x, signed long y, signed long z, signed lon
 // returns values in range [-15.5,15.5]
 void hash3d( float V[3], signed long x, signed long y, signed long z )
 {
-  unsigned short s = _spTable[ _cpTable[ (x & 0xff) ^ _cpTable[ (y & 0xff) ^ _cpTable[ (z ^ 0xff) ]]]];
+  unsigned short s = _spTable[ _cpTable[ (x & 0xff) ^ _cpTable[ (y & 0xff) ^ _cpTable[ (z & 0xff) ]]]];
 
   V[0] = float(s & 0x1f);
   s >>= 5;
